@@ -27,9 +27,7 @@ var CONFIG = {
   sourcePath: {"js":"js","css":"css","images":"images"},
 };
 
-window.CONFIG = CONFIG;</script><!-- hexo injector head_end start -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.2.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">Home</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">Archives</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">one2world</div><div class="header-banner-info__subtitle"></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content content-home" id="content"><section class="postlist"><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2020/09/23/sources/3d%E6%95%B0%E5%AD%A6/5.%E6%AC%A7%E6%8B%89%E8%A7%92/">[ Untitled ]</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2020-09-23</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2020-09-23</span></span></div></header><div class="post-body"><div class="post-excerpt">
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.2.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">Home</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">Archives</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">one2world</div><div class="header-banner-info__subtitle"></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content content-home" id="content"><section class="postlist"><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2020/09/23/sources/3d%E6%95%B0%E5%AD%A6/5.%E6%AC%A7%E6%8B%89%E8%A7%92/">[ Untitled ]</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2020-09-23</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2020-09-23</span></span></div></header><div class="post-body"><div class="post-excerpt">
         <h2 id="欧拉角和四元数"   >
           <a href="#欧拉角和四元数" class="heading-link"><i class="fas fa-link"></i></a>欧拉角和四元数</h2>
       <hr>
@@ -38,8 +36,7 @@ window.CONFIG = CONFIG;</script><!-- hexo injector head_end start -->
 <li>3d数学<br>mathjax: true</li>
 </ul>
 <hr>
-<img src="/images\ola.png" style="zoom:80%;" />
-
+<p><img src="/images\ola.png" style="zoom:80%;" /></p>
 <ul>
 <li><p>欧拉角</p>
 <ul>
@@ -65,82 +62,71 @@ window.CONFIG = CONFIG;</script><!-- hexo injector head_end start -->
 <li><p>四元数</p>
 </li>
 <li><p>各种方法比较</p>
-<div class="table-container"><table>
-<thead>
-<tr>
-<th>任务/性质</th>
-<th>矩阵</th>
-<th>欧拉角</th>
-<th>四元数</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>在坐标系间旋转点</td>
-<td>能</td>
-<td>不能（需要转换到矩阵）</td>
-<td>不能（需要转换到矩阵）</td>
-</tr>
-<tr>
-<td>连接或增量旋转</td>
-<td>能，比四元数慢，还需要小心矩阵蠕变的情况</td>
-<td>不能</td>
-<td>能，比矩阵快</td>
-</tr>
-<tr>
-<td>插值</td>
-<td>不能</td>
-<td>能，遭遇万向锁和其他问题</td>
-<td>Slerp 提供平滑插值</td>
-</tr>
-<tr>
-<td>难易程度</td>
-<td>难</td>
-<td>易</td>
-<td>难</td>
-</tr>
-<tr>
-<td>储存</td>
-<td>9个数</td>
-<td>3个数</td>
-<td>4个数</td>
-</tr>
-<tr>
-<td>变换唯一性</td>
-<td>唯一</td>
-<td>不唯一，多种或者无数种</td>
-<td>不唯一，有两种，他们相互为负</td>
-</tr>
-<tr>
-<td>可能导致非法</td>
-<td>矩阵蠕变</td>
-<td>合法</td>
-<td>可能出现误差累计，从而产生非法四元数</td>
-</tr>
-</tbody></table></div>
+<p>| 任务/性质        | 矩阵                                     | 欧拉角                   | 四元数                               |<br>| ———————— | ———————————————————— | ———————————— | —————————————————— |<br>| 在坐标系间旋转点 | 能                                       | 不能（需要转换到矩阵）   | 不能（需要转换到矩阵）               |<br>| 连接或增量旋转   | 能，比四元数慢，还需要小心矩阵蠕变的情况 | 不能                     | 能，比矩阵快                         |<br>| 插值             | 不能                                     | 能，遭遇万向锁和其他问题 | Slerp 提供平滑插值                   |<br>| 难易程度         | 难                                       | 易                       | 难                                   |<br>| 储存             | 9个数                                    | 3个数                    | 4个数                                |<br>| 变换唯一性       | 唯一                                     | 不唯一，多种或者无数种   | 不唯一，有两种，他们相互为负         |<br>| 可能导致非法     | 矩阵蠕变                                 | 合法                     | 可能出现误差累计，从而产生非法四元数 |</p>
 </li>
 <li><p>各种方法之间的转换</p>
 <ul>
 <li><p>欧拉角到矩阵</p>
 <blockquote>
-<pre><code>H、P、B分别为heading、pitch、bank的旋转矩阵，他们分别绕 y，x，z左手法则旋转。设 heading、pitch、bank 旋转角分量分别是 h、p、b则 旋转矩阵为 反向操作，</code></pre>
-</blockquote>
+<pre><code>H、P、B分别为heading、pitch、bank的旋转矩阵，他们分别绕 y，x，z左手法则旋转。设 heading、pitch、bank 旋转角分量分别是 h、p、b则 旋转矩阵为 反向操作，
+</code></pre></blockquote>
 </li>
 </ul>
 </li>
 <li><p>欧拉角——&gt; 矩阵</p>
 <ul>
 <li><p>惯性——&gt;物体</p>
-<p>$$<br>H = R_y(-h)= \begin{bmatrix}<br>\cos(-h)&amp; 0&amp; -\sin(-h)\<br>0&amp; 1&amp; 0\<br>\sin(-h)&amp; 0&amp; \cos(-h)<br>\end{bmatrix}= \begin{bmatrix}<br>\cos(h)&amp; 0&amp; \sin(h)\<br>0&amp; 1&amp; 0\<br>-\sin(h)&amp; 0&amp; \cos(h)<br>\end{bmatrix}<br>$$</p>
-<p>$$<br>P = R_x(-p)= \begin{bmatrix}<br>1&amp; 0&amp; 0\<br>0&amp; \cos(-p)&amp; \sin(-p)\<br>0&amp;-\sin(-p)&amp; \cos(-p)<br>\end{bmatrix}= \begin{bmatrix}<br>0&amp; 1&amp; 0\<br>0&amp;\cos(p)&amp; -\sin(p)\<br>0&amp; \sin(p)&amp;  \cos(p)<br>\end{bmatrix}<br>$$</p>
-<p>$$<br>B = R_z(-b)= \begin{bmatrix}<br>\cos(-b)&amp; \sin(-b)&amp;0\<br>-\sin(-b)&amp; \cos(-b)&amp;0\<br>0&amp; 0&amp; 1<br>\end{bmatrix}= \begin{bmatrix}<br>\cos(b)&amp; -\sin(b)&amp;0\<br>\sin(b)&amp;  \cos(b)&amp;0\<br>0&amp; 0&amp; 1<br>\end{bmatrix}<br>$$</p>
-<p>$$<br>M_{惯性\rightarrow物体} = HPB =\begin{bmatrix}<br>\cos(h)&amp; 0&amp; \sin(h)\<br>0&amp; 1&amp; 0\<br>-\sin(h)&amp; 0&amp; \cos(h)<br>\end{bmatrix}\begin{bmatrix}<br>0&amp; 1&amp; 0\<br>0&amp;\cos(p)&amp; -\sin(p)\<br>0&amp; \sin(p)&amp;  \cos(p)<br>\end{bmatrix}\begin{bmatrix}<br>\cos(b)&amp; -\sin(b)&amp;0\<br>\sin(b)&amp;  \cos(b)&amp;0\<br>0&amp; 0&amp; 1<br>\end{bmatrix}<br>$$</p>
-<p>$$<br>=\begin{bmatrix}<br>\cos(h)\cos(b) + \sin(h)\sin(p)\sin(b)&amp; -\cos(h)\sin(b) + \sin(h)\sin(p)\sin(b)&amp; \sin(h)\cos(p)\<br>\sin(b)\cos(p)                        &amp; \cos(b)\sin(p)                         &amp; -\sin(p)\<br>\sin(h)\cos(b) + \cos(h)\sin(p)\sin(b)&amp; \sin(b)\sin(h) + \cos(h)\cos(p)\cos(b)&amp; \cos(h)\cos(p)\<br>\end{bmatrix}<br>$$</p>
-</li>
+<script type="math/tex; mode=display">
+H = R_y(-h)= \begin{bmatrix} 
+\cos(-h)& 0& -\sin(-h)\\
+0& 1& 0\\
+\sin(-h)& 0& \cos(-h)
+\end{bmatrix}= \begin{bmatrix} 
+\cos(h)& 0& \sin(h)\\
+0& 1& 0\\
+-\sin(h)& 0& \cos(h)
+\end{bmatrix}</script><script type="math/tex; mode=display">
+P = R_x(-p)= \begin{bmatrix} 
+1& 0& 0\\
+0& \cos(-p)& \sin(-p)\\
+0&-\sin(-p)& \cos(-p)
+\end{bmatrix}= \begin{bmatrix} 
+0& 1& 0\\
+0&\cos(p)& -\sin(p)\\
+0& \sin(p)&  \cos(p)
+\end{bmatrix}</script><script type="math/tex; mode=display">
+B = R_z(-b)= \begin{bmatrix} 
+\cos(-b)& \sin(-b)&0\\
+-\sin(-b)& \cos(-b)&0\\
+0& 0& 1
+\end{bmatrix}= \begin{bmatrix} 
+\cos(b)& -\sin(b)&0\\
+\sin(b)&  \cos(b)&0\\
+0& 0& 1
+\end{bmatrix}</script><script type="math/tex; mode=display">
+M_{惯性\rightarrow物体} = HPB =\begin{bmatrix} 
+\cos(h)& 0& \sin(h)\\
+0& 1& 0\\
+-\sin(h)& 0& \cos(h)
+\end{bmatrix}\begin{bmatrix} 
+0& 1& 0\\
+0&\cos(p)& -\sin(p)\\
+0& \sin(p)&  \cos(p)
+\end{bmatrix}\begin{bmatrix} 
+\cos(b)& -\sin(b)&0\\
+\sin(b)&  \cos(b)&0\\
+0& 0& 1
+\end{bmatrix}</script><script type="math/tex; mode=display">
+=\begin{bmatrix} 
+\cos(h)\cos(b) + \sin(h)\sin(p)\sin(b)& -\cos(h)\sin(b) + \sin(h)\sin(p)\sin(b)& \sin(h)\cos(p)\\
+\sin(b)\cos(p)                        & \cos(b)\sin(p)                         & -\sin(p)\\
+\sin(h)\cos(b) + \cos(h)\sin(p)\sin(b)& \sin(b)\sin(h) + \cos(h)\cos(p)\cos(b)& \cos(h)\cos(p)\\
+\end{bmatrix}</script></li>
 </ul>
 </li>
 </ul>
-<pre><code>- 物体——&gt;惯性</code></pre>
-<ul>
+<pre><code>- 物体——&gt;惯性
+</code></pre><ul>
 <li><p>矩阵  ——&gt; 欧拉角</p>
 </li>
 <li><p>四元数 ——&gt; 矩阵</p>
@@ -182,127 +168,148 @@ window.CONFIG = CONFIG;</script><!-- hexo injector head_end start -->
 <li><p>旋转</p>
 <ol>
 <li><p>2D旋转</p>
-<img src="/images\rotate2d.png" style="zoom:80%;" />
-$$
-2d构造矩阵：  R(\theta) = \begin{bmatrix} p^` \\q^` \end{bmatrix} = \begin{bmatrix} \cos\theta & \sin\theta\\-\sin\theta &\cos\theta \end{bmatrix}, p 为x轴旋转， q为y轴旋转。
-$$
-</li>
+<p><img src="/images\rotate2d.png" style="zoom:80%;" /></p>
+<script type="math/tex; mode=display">
+2d构造矩阵：  R(\theta) = \begin{bmatrix} p^` \\q^` \end{bmatrix} = \begin{bmatrix} \cos\theta & \sin\theta\\-\sin\theta &\cos\theta \end{bmatrix}, p 为x轴旋转， q为y轴旋转。</script></li>
 <li><p>3D旋转，<code>绕轴旋转</code></p>
 <ol>
 <li><p>区分旋转方向， <code>左手法则，手握旋转轴，拇指朝向正方向，四指绕向为正</code></p>
-<div class="table-container"><table>
-<thead>
-<tr>
-<th align="left"></th>
-<th align="center">左手坐标系</th>
-<th align="center">右手坐标系</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">从哪边看</td>
-<td align="center">正方向|负方向</td>
-<td align="center">正方向| 负方向</td>
-</tr>
-<tr>
-<td align="left">从负端向正端看</td>
-<td align="center">逆时针|顺时针</td>
-<td align="center">顺时针|逆时针</td>
-</tr>
-<tr>
-<td align="left">从正端向负端看</td>
-<td align="center">顺时针|逆时针</td>
-<td align="center">逆时针|顺时针</td>
-</tr>
-</tbody></table></div>
+<p>|                |   左手坐标系   |   右手坐标系    |<br>| :——————- | :——————: | :——————-: |<br>| 从哪边看       | 正方向|负方向 | 正方向| 负方向 |<br>| 从负端向正端看 | 逆时针|顺时针 | 顺时针|逆时针  |<br>| 从正端向负端看 | 顺时针|逆时针 | 逆时针|顺时针  |</p>
 </li>
 <li><p>绕着x轴旋转，(此时等于旋转 yz 组成的2d笛卡尔坐标系，而x轴不变，因此构造矩阵如下：）</p>
-<img src="/images\rotate3d.png" style="zoom:80%;" />
-$$
-绕x旋转的构造矩阵：  R(\theta) = \begin{bmatrix} p^`\\q^` \\r^` \end{bmatrix} = \begin{bmatrix} 1&0&0\\0&\cos\theta & \sin\theta\\0&-\sin\theta &\cos\theta \end{bmatrix}, p 为x轴旋转， q为y轴旋转,r为z轴旋转。
-$$
-</li>
-<li><p>绕y旋转类似，(此时等于旋转 xz 组成的2d笛卡尔坐标系，而y轴不变，因此构造矩阵如下：）<br>$$<br>绕y旋转的构造矩阵：  R(\theta) = \begin{bmatrix} p^<code>\\q^</code> \r^` \end{bmatrix} = \begin{bmatrix}<br>\cos\theta&amp;0&amp;-\sin\theta\<br>0&amp; 1&amp;0 \<br>\sin\theta &amp;0&amp;\cos\theta \end{bmatrix}, p 为x轴旋转， q为y轴旋转,r为z轴旋转。<br>$$</p>
-</li>
-<li><p>绕z旋转类似，(此时等于旋转 xy 组成的2d笛卡尔坐标系，而z轴不变，因此构造矩阵如下：）<br>$$<br>绕y旋转的构造矩阵：  R(\theta) = \begin{bmatrix} p^<code>\\q^</code> \r^` \end{bmatrix} = \begin{bmatrix}<br>\cos\theta&amp;\sin\theta&amp;0\<br>-\sin\theta &amp;\cos\theta &amp;0 \<br>0&amp; 0&amp; 1<br>\end{bmatrix}, p 为x轴旋转， q为y轴旋转,r为z轴旋转。<br>$$</p>
-</li>
-<li><p>绕<strong>任意方向，不依赖旋转轴</strong>旋转，原理类似，忽略推到，公式如下：<br>$$<br>R(n, \theta),代表 绕n方向旋转 \theta.<br>$$</p>
-<p>$$<br>R(n,\theta) = \begin{bmatrix} p^<code>\\q^</code> \r^` \end{bmatrix} = \begin{bmatrix}<br> n_x^2(1-\cos\theta)+   \cos\theta&amp; n_xn_y(1-\cos\theta)+n_z\sin\theta&amp;n_xn_z(1-\cos\theta)-n_y\sin\theta\<br>n_xn_y(1-\cos\theta)-n_x\sin\theta&amp; n_y^2 (1-\cos\theta)+   \cos\theta&amp;n_yn_z(1-\cos\theta)-n_x\sin\theta\<br>n_xn_z(1-\cos\theta)+n_y\sin\theta&amp; n_yn_z(1-\cos\theta)-n_x\sin\theta&amp;n_z^2 (1-\cos\theta)+    \cos\theta\<br>\end{bmatrix}<br>$$</p>
-</li>
+<p><img src="/images\rotate3d.png" style="zoom:80%;" /></p>
+<script type="math/tex; mode=display">
+绕x旋转的构造矩阵：  R(\theta) = \begin{bmatrix} p^`\\q^` \\r^` \end{bmatrix} = \begin{bmatrix} 1&0&0\\0&\cos\theta & \sin\theta\\0&-\sin\theta &\cos\theta \end{bmatrix}, p 为x轴旋转， q为y轴旋转,r为z轴旋转。</script></li>
+<li><p>绕y旋转类似，(此时等于旋转 xz 组成的2d笛卡尔坐标系，而y轴不变，因此构造矩阵如下：）</p>
+<script type="math/tex; mode=display">
+绕y旋转的构造矩阵：  R(\theta) = \begin{bmatrix} p^`\\q^` \\r^` \end{bmatrix} = \begin{bmatrix} 
+\cos\theta&0&-\sin\theta\\
+0& 1&0 \\
+\sin\theta &0&\cos\theta \end{bmatrix}, p 为x轴旋转， q为y轴旋转,r为z轴旋转。</script></li>
+<li><p>绕z旋转类似，(此时等于旋转 xy 组成的2d笛卡尔坐标系，而z轴不变，因此构造矩阵如下：）</p>
+<script type="math/tex; mode=display">
+绕y旋转的构造矩阵：  R(\theta) = \begin{bmatrix} p^`\\q^` \\r^` \end{bmatrix} = \begin{bmatrix} 
+\cos\theta&\sin\theta&0\\
+-\sin\theta &\cos\theta &0 \\
+0& 0& 1 
+\end{bmatrix}, p 为x轴旋转， q为y轴旋转,r为z轴旋转。</script></li>
+<li><p>绕<strong>任意方向，不依赖旋转轴</strong>旋转，原理类似，忽略推到，公式如下：</p>
+<script type="math/tex; mode=display">
+R(n, \theta),代表 绕n方向旋转 \theta.</script><script type="math/tex; mode=display">
+R(n,\theta) = \begin{bmatrix} p^`\\q^` \\r^` \end{bmatrix} = \begin{bmatrix} 
+ n_x^2(1-\cos\theta)+   \cos\theta& n_xn_y(1-\cos\theta)+n_z\sin\theta&n_xn_z(1-\cos\theta)-n_y\sin\theta\\
+n_xn_y(1-\cos\theta)-n_x\sin\theta& n_y^2 (1-\cos\theta)+   \cos\theta&n_yn_z(1-\cos\theta)-n_x\sin\theta\\
+n_xn_z(1-\cos\theta)+n_y\sin\theta& n_yn_z(1-\cos\theta)-n_x\sin\theta&n_z^2 (1-\cos\theta)+    \cos\theta\\
+\end{bmatrix}</script></li>
 </ol>
 </li>
 </ol>
 </li>
 <li><p>缩放</p>
 <ol>
-<li>沿坐标轴缩放<br>$$<br>S(k_x, k_y, k_z) = \begin{bmatrix}<br>k_x &amp; 0 &amp;0\<br>0&amp;k_y&amp;0\<br>0&amp;0&amp;k_z<br>\end{bmatrix}<br>$$</li>
+<li>沿坐标轴缩放<script type="math/tex; mode=display">
+S(k_x, k_y, k_z) = \begin{bmatrix} 
+k_x & 0 &0\\
+0&k_y&0\\
+0&0&k_z
+\end{bmatrix}</script></li>
 </ol>
 </li>
 </ol>
-<ol start="2">
-<li><p>沿<strong>任意方向，不依赖旋转轴</strong>缩放<br>$$<br>R(n, k),代表 绕n方向缩放 k.<br>$$</p>
-<p>$$<br>S(n,k) = \begin{bmatrix} p^<code>\\q^</code> \r^` \end{bmatrix} = \begin{bmatrix}<br> 1+(k-1)n_x^2&amp; (k-1)n_xn_y&amp; (k-1)n_xn_z\<br> (k-1)n_xn_y&amp; 1+(k-1)n_y^2&amp; (k-1)n_yn_z\<br> (k-1)n_xn_z&amp; (k-1)n_zn_y&amp; 1+(k-1)n_z^2<br>\end{bmatrix}<br>$$</p>
-</li>
+<ol>
+<li><p>沿<strong>任意方向，不依赖旋转轴</strong>缩放</p>
+<script type="math/tex; mode=display">
+R(n, k),代表 绕n方向缩放 k.</script><script type="math/tex; mode=display">
+S(n,k) = \begin{bmatrix} p^`\\q^` \\r^` \end{bmatrix} = \begin{bmatrix} 
+ 1+(k-1)n_x^2& (k-1)n_xn_y& (k-1)n_xn_z\\
+ (k-1)n_xn_y& 1+(k-1)n_y^2& (k-1)n_yn_z\\
+ (k-1)n_xn_z& (k-1)n_zn_y& 1+(k-1)n_z^2
+\end{bmatrix}</script></li>
 </ol>
-<ol start="3">
+<ol>
 <li><p>正交投影</p>
 <blockquote>
 <p>一般来说投影意味着降维操作，例如3d赋值给2d，抛弃z。（正交、平行、透视投影）</p>
 </blockquote>
 <ol>
-<li>向x轴投影，保留x为1， 舍弃部分置0<br>$$<br>P_x = S(\begin{bmatrix}0&amp;1\end{bmatrix} ,0) = \begin{bmatrix} 1&amp;0\0&amp;0 \end{bmatrix}<br>$$</li>
+<li>向x轴投影，保留x为1， 舍弃部分置0<script type="math/tex; mode=display">
+P_x = S(\begin{bmatrix}0&1\end{bmatrix} ,0) = \begin{bmatrix} 1&0\\0&0 \end{bmatrix}</script></li>
 </ol>
 </li>
 </ol>
-<ol start="2">
-<li><p>同理y轴投影<br>$$<br>P_y = S(\begin{bmatrix}1&amp;0\end{bmatrix} ,0) = \begin{bmatrix} 0&amp;0\0&amp;1 \end{bmatrix}<br>$$</p>
-</li>
-<li><p>向xy投影<br>$$<br>P_{xy} = S(\begin{bmatrix}0&amp;0&amp;1\end{bmatrix} ,0) = \begin{bmatrix} 1&amp;0&amp;0\0&amp;1&amp;0\0&amp;0&amp;0 \end{bmatrix}<br>$$</p>
-</li>
-<li><p>向xz投影<br>$$<br>P_{xz} = S(\begin{bmatrix}0&amp;1&amp;0\end{bmatrix} ,0) = \begin{bmatrix} 1&amp;0&amp;0\0&amp;0&amp;0\0&amp;0&amp;1\end{bmatrix}<br>$$</p>
-</li>
+<ol>
+<li><p>同理y轴投影</p>
+<script type="math/tex; mode=display">
+P_y = S(\begin{bmatrix}1&0\end{bmatrix} ,0) = \begin{bmatrix} 0&0\\0&1 \end{bmatrix}</script></li>
+<li><p>向xy投影</p>
+<script type="math/tex; mode=display">
+P_{xy} = S(\begin{bmatrix}0&0&1\end{bmatrix} ,0) = \begin{bmatrix} 1&0&0\\0&1&0\\0&0&0 \end{bmatrix}</script></li>
+<li><p>向xz投影</p>
+<script type="math/tex; mode=display">
+P_{xz} = S(\begin{bmatrix}0&1&0\end{bmatrix} ,0) = \begin{bmatrix} 1&0&0\\0&0&0\\0&0&1\end{bmatrix}</script></li>
 </ol>
-<ol start="5">
-<li><p>向yz投影<br>$$<br>P_{yz} = S(\begin{bmatrix}1&amp;0&amp;0\end{bmatrix} ,0) = \begin{bmatrix} 0&amp;0&amp;0\0&amp;1&amp;0\0&amp;0&amp;1\end{bmatrix}<br>$$</p>
-</li>
-<li><p>向任意平面投影<br>$$<br>P(n) = S(n, 0), n代表任意直线/平面<br>$$</p>
-<p>$$<br>P(n) = S(n,0) = \begin{bmatrix}<br> 1+(0-1)n_x^2&amp; (0-1)n_xn_y&amp; (0-1)n_xn_z\<br> (0-1)n_xn_y&amp; 1+(0-1)n_y^2&amp; (0-1)n_yn_z\<br> (0-1)n_xn_z&amp; (0-1)n_zn_y&amp; 1+(0-1)n_z^2<br>\end{bmatrix}<br>$$</p>
-</li>
+<ol>
+<li><p>向yz投影</p>
+<script type="math/tex; mode=display">
+P_{yz} = S(\begin{bmatrix}1&0&0\end{bmatrix} ,0) = \begin{bmatrix} 0&0&0\\0&1&0\\0&0&1\end{bmatrix}</script></li>
+<li><p>向任意平面投影</p>
+<script type="math/tex; mode=display">
+P(n) = S(n, 0), n代表任意直线/平面</script><script type="math/tex; mode=display">
+P(n) = S(n,0) = \begin{bmatrix} 
+ 1+(0-1)n_x^2& (0-1)n_xn_y& (0-1)n_xn_z\\
+ (0-1)n_xn_y& 1+(0-1)n_y^2& (0-1)n_yn_z\\
+ (0-1)n_xn_z& (0-1)n_zn_y& 1+(0-1)n_z^2
+\end{bmatrix}</script></li>
 </ol>
-<ol start="4">
+<ol>
 <li><p>镜像 <code>翻折</code></p>
 <ol>
-<li>2D<br>$$<br>P(n) = S(n,-1) = \begin{bmatrix}<br> 1+(-1-1)n_x^2&amp; (-1-1)n_xn_y\<br> (-1-1)n_xn_y&amp; 1+(-1-1)n_y^2\<br> (-1-1)n_xn_z&amp; (-1-1)n_zn_y<br>\end{bmatrix}<br>$$</li>
+<li>2D<script type="math/tex; mode=display">
+P(n) = S(n,-1) = \begin{bmatrix} 
+ 1+(-1-1)n_x^2& (-1-1)n_xn_y\\
+ (-1-1)n_xn_y& 1+(-1-1)n_y^2\\
+ (-1-1)n_xn_z& (-1-1)n_zn_y
+\end{bmatrix}</script></li>
 </ol>
 </li>
 </ol>
-<ol start="2">
-<li>3D<br>$$<br>P(n) = S(n,-1) = \begin{bmatrix}<br> 1+(-1-1)n_x^2&amp; (-1-1)n_xn_y&amp; (-1-1)n_xn_z\<br> (-1-1)n_xn_y&amp; 1+(-1-1)n_y^2&amp; (-1-1)n_yn_z\<br> (-1-1)n_xn_z&amp; (-1-1)n_zn_y&amp; 1+(-1-1)n_z^2<br>\end{bmatrix}<br>= \begin{bmatrix}<br>1-2n_x^2&amp; -2n_xn_y&amp;-2n_xn_z\<br>-2n_xn_y&amp; -2n_y^2&amp;-2n_yn_z\<br>-2n_xn_z&amp; -2n_zn_y&amp;-2n_z^2\<br>\end{bmatrix}<br>$$</li>
+<ol>
+<li>3D<script type="math/tex; mode=display">
+P(n) = S(n,-1) = \begin{bmatrix} 
+ 1+(-1-1)n_x^2& (-1-1)n_xn_y& (-1-1)n_xn_z\\
+ (-1-1)n_xn_y& 1+(-1-1)n_y^2& (-1-1)n_yn_z\\
+ (-1-1)n_xn_z& (-1-1)n_zn_y& 1+(-1-1)n_z^2
+\end{bmatrix}
+= \begin{bmatrix}
+1-2n_x^2& -2n_xn_y&-2n_xn_z\\
+-2n_xn_y& -2n_y^2&-2n_yn_z\\
+-2n_xn_z& -2n_zn_y&-2n_z^2\\
+\end{bmatrix}</script></li>
 </ol>
-<ol start="5">
+<ol>
 <li><p>切变，<code>（非均匀地拉伸它，角度发生变化，面积和体积不变）</code></p>
-<img src="/images\tbian.png" style="zoom:80%;" />
-
-
+<p><img src="/images\tbian.png" style="zoom:80%;" /></p>
 </li>
 </ol>
-<p>   $$<br>   x^` = x + sy,  s为变化因子。 H_x(s) =\begin{bmatrix}1&amp;0\s&amp;1\end{bmatrix}, x 随着y被切变，s控制方向和量<br>   $$</p>
-<p>   $$<br>   另一种变换 H_y。 H_y(s) =\begin{bmatrix}1&amp;s\0&amp;1\end{bmatrix}, x 随着y被切变，s控制方向和量<br>   $$</p>
-<ol start="6">
+<script type="math/tex; mode=display">
+   x^` = x + sy,  s为变化因子。 H_x(s) =\begin{bmatrix}1&0\\s&1\end{bmatrix}, x 随着y被切变，s控制方向和量</script><script type="math/tex; mode=display">
+   另一种变换 H_y。 H_y(s) =\begin{bmatrix}1&s\\0&1\end{bmatrix}, x 随着y被切变，s控制方向和量</script><ol>
 <li><p>3D切变</p>
 <blockquote>
 <p>3d中的切变是取出一个坐标乘以不同的因子，再加到其他坐标上，H_{xy} 意义是 xy坐标被z改变，</p>
 </blockquote>
-<p>$$<br>H_{xy}(s) =\begin{bmatrix}1&amp;0&amp;0\0&amp;1&amp;0\s&amp;t&amp;1\end{bmatrix}<br>$$</p>
-<p>$$<br>H_{xz}(s) =\begin{bmatrix}1&amp;0&amp;0\s&amp;1&amp;t\0&amp;0&amp;1\end{bmatrix}<br>$$</p>
-<p>$$<br>H_{yz}(s) =\begin{bmatrix}1&amp;s&amp;t\0&amp;1&amp;0\0&amp;0&amp;1\end{bmatrix}<br>$$</p>
-</li>
+<script type="math/tex; mode=display">
+H_{xy}(s) =\begin{bmatrix}1&0&0\\0&1&0\\s&t&1\end{bmatrix}</script><script type="math/tex; mode=display">
+H_{xz}(s) =\begin{bmatrix}1&0&0\\s&1&t\\0&0&1\end{bmatrix}</script><script type="math/tex; mode=display">
+H_{yz}(s) =\begin{bmatrix}1&s&t\\0&1&0\\0&0&1\end{bmatrix}</script></li>
 <li><p>组合变换</p>
 <ol>
-<li><p>坐标系组合变换<br>$$<br>P_{世界} = P_{物体}M_{物体\rightarrow世界}<br>$$</p>
-<p>$$<br>P_{相机} = P_{世界}M_{世界\rightarrow相机} = (P_{物体}M_{物体\rightarrow世界})M_{世界\rightarrow相机} = P_{物体}(M_{物体\rightarrow世界}M_{世界\rightarrow相机})<br>$$</p>
-<p>$$<br>M_{物体\rightarrow相机} = M_{物体\rightarrow世界}M_{世界\rightarrow相机}<br>$$</p>
-<p>$$<br>P_{相机} =P_{物体}M_{物体\rightarrow相机}<br>$$</p>
-</li>
+<li><p>坐标系组合变换</p>
+<script type="math/tex; mode=display">
+P_{世界} = P_{物体}M_{物体\rightarrow世界}</script><script type="math/tex; mode=display">
+P_{相机} = P_{世界}M_{世界\rightarrow相机} = (P_{物体}M_{物体\rightarrow世界})M_{世界\rightarrow相机} = P_{物体}(M_{物体\rightarrow世界}M_{世界\rightarrow相机})</script><script type="math/tex; mode=display">
+M_{物体\rightarrow相机} = M_{物体\rightarrow世界}M_{世界\rightarrow相机}</script><script type="math/tex; mode=display">
+P_{相机} =P_{物体}M_{物体\rightarrow相机}</script></li>
 </ol>
 </li>
 <li><p>变换分类</p>
@@ -348,37 +355,66 @@ $$
 <p>行和列的形式组织数字块。</p>
 </blockquote>
 <ul>
-<li><p>行列相同的矩阵— <code>方阵</code><br>$$<br>\begin{bmatrix}m_{11}&amp;m_{12}&amp;m_{13}\m_{21}&amp;m_{22}&amp;m_{23}\m_{31}&amp;m_{32}&amp;m_{33}\end{bmatrix}<br>$$</p>
-<ul>
-<li>对角矩阵，非对角线都为0，对角线可0可非0的**<code>特殊方阵</code>**</li>
+<li><p>行列相同的矩阵—- <code>方阵</code></p>
+<script type="math/tex; mode=display">
+\begin{bmatrix}m_{11}&m_{12}&m_{13}\\m_{21}&m_{22}&m_{23}\\m_{31}&m_{32}&m_{33}\end{bmatrix}</script><ul>
+<li>对角矩阵，非对角线都为0，对角线可0可非0的<strong><code>特殊方阵</code></strong></li>
 </ul>
-<p>$$<br>\begin{bmatrix}m_{11}&amp;0&amp;0\0&amp;m_{22}&amp;0\0&amp;0&amp;m_{33}\end{bmatrix}<br>$$</p>
-<ul>
-<li>单位矩阵<strong>I</strong>，对角线元素为1 的**<code>特殊对角矩阵</code>**<br>$$<br>\begin{bmatrix}1&amp;0&amp;0\0&amp;1&amp;0\0&amp;0&amp;1\end{bmatrix}<br>$$</li>
+<script type="math/tex; mode=display">
+\begin{bmatrix}m_{11}&0&0\\0&m_{22}&0\\0&0&m_{33}\end{bmatrix}</script><ul>
+<li>单位矩阵<strong>I</strong>，对角线元素为1 的<strong><code>特殊对角矩阵</code></strong><script type="math/tex; mode=display">
+\begin{bmatrix}1&0&0\\0&1&0\\0&0&1\end{bmatrix}</script></li>
 </ul>
 </li>
 </ul>
 <ul>
-<li><p>单行单列矩阵—<code>向量</code><br>$$<br>行矩阵(向量) \begin{bmatrix}m_{11}&amp;m_{12}&amp;m_{13}\end{bmatrix}<br>$$</p>
-<p>$$<br>列矩阵(向量)\begin{bmatrix}m_{11}\m_{12}\m_{13}\end{bmatrix}<br>$$</p>
-</li>
+<li><p>单行单列矩阵—-<code>向量</code></p>
+<script type="math/tex; mode=display">
+行矩阵(向量) \begin{bmatrix}m_{11}&m_{12}&m_{13}\end{bmatrix}</script><script type="math/tex; mode=display">
+列矩阵(向量)\begin{bmatrix}m_{11}\\m_{12}\\m_{13}\end{bmatrix}</script></li>
 <li><p>矩阵运算</p>
 <ul>
 <li>矩阵转置</li>
 </ul>
-<p>$$<br>M^{T}<em>{ij} = M</em>{ji}<br>$$</p>
-<p>$$<br>例如： \begin{bmatrix}1&amp;2\3&amp;4\5&amp;6\end{bmatrix}^T = \begin{bmatrix}1&amp;3 &amp;5\2&amp;4&amp;6\end{bmatrix}<br>$$</p>
-<ul>
-<li>标量与矩阵乘法，标量与矩阵每个元素相乘。<br>$$<br>k \begin{bmatrix}m_{11}&amp;m_{12}&amp;m_{13}\m_{21}&amp;m_{22}&amp;m_{23}\m_{31}&amp;m_{32}&amp;m_{33}\end{bmatrix} = \begin{bmatrix}km_{11}&amp;km_{12}&amp;km_{13}\km_{21}&amp;km_{22}&amp;km_{23}\km_{31}&amp;km_{32}&amp;km_{33}\end{bmatrix}<br>$$</li>
+<script type="math/tex; mode=display">
+M^{T}_{ij} = M_{ji}</script><script type="math/tex; mode=display">
+例如： \begin{bmatrix}1&2\\3&4\\5&6\end{bmatrix}^T = \begin{bmatrix}1&3 &5\\2&4&6\end{bmatrix}</script><ul>
+<li>标量与矩阵乘法，标量与矩阵每个元素相乘。<script type="math/tex; mode=display">
+k \begin{bmatrix}m_{11}&m_{12}&m_{13}\\m_{21}&m_{22}&m_{23}\\m_{31}&m_{32}&m_{33}\end{bmatrix} = \begin{bmatrix}km_{11}&km_{12}&km_{13}\\km_{21}&km_{22}&km_{23}\\km_{31}&km_{32}&km_{33}\end{bmatrix}</script></li>
 </ul>
 </li>
 </ul>
 <ul>
-<li><p>矩阵和矩阵乘法，<strong>A</strong> <strong>B</strong>矩阵相乘，前提是 <strong>A的列必须等于 B的行</strong>， 结果为 A行B列的矩阵。<br>$$<br>C_{ij} = \sum_{k=1}^{n}a_{ik}b_{ki}, n为 a的列，b的行<br>$$<br>a的 i行 对应乘以 b的j列，然后求和 作为 ij的值。<br>$$<br>例如： \begin{bmatrix}a_{11}&amp;a_{12}&amp;a_{13}\a_{21}&amp;a_{22}&amp;a_{23}\end{bmatrix}\begin{bmatrix}b_{11}&amp;b_{12}\b_{21}&amp;b_{22}\b_{31}&amp;b_{32}\end{bmatrix} = \begin{bmatrix}<br>a_{11}b_{11}+a_{12}b_{21} + a_{13}b_{31}&amp;<br>a_{11}b_{12}+a_{12}b_{22} + a_{13}b_{32}\<br>a_{21}b_{11}+a_{22}b_{21} + a_{23}b_{31}&amp;<br>a_{21}b_{12}+a_{22}b_{22} + a_{23}b_{32}<br>\end{bmatrix}<br>$$</p>
-<p>$$<br>例如：<br>\begin{bmatrix}<br>1&amp;3&amp;5\7&amp;9&amp;11<br>\end{bmatrix}<br>\begin{bmatrix}<br>2&amp;4\6&amp;8\10&amp;12<br>\end{bmatrix}<br>= \begin{bmatrix}<br>1<em>2+3 <em>6 + 5</em>10&amp;<br>1</em>4 + 3<em>8 + 5</em>12\<br>7<em>2 + 9</em> 6 + 11 * 10&amp;<br>7<em>4 + 9</em>8 + 11 * 12<br>\end{bmatrix}<br>= \begin{bmatrix}<br>70 &amp; 88\<br>178 &amp; 316<br>\end{bmatrix}<br>$$</p>
-</li>
-<li><p>任意矩阵 <code>M</code>乘以方阵 <code>S</code> 等于原矩阵，<br>$$<br>MI = IM= M<br>$$</p>
-</li>
+<li><p>矩阵和矩阵乘法，<strong>A</strong> <strong>B</strong>矩阵相乘，前提是 <strong>A的列必须等于 B的行</strong>， 结果为 A行B列的矩阵。</p>
+<script type="math/tex; mode=display">
+C_{ij} = \sum_{k=1}^{n}a_{ik}b_{ki}, n为 a的列，b的行</script><p>a的 i行 对应乘以 b的j列，然后求和 作为 ij的值。</p>
+<script type="math/tex; mode=display">
+例如： \begin{bmatrix}a_{11}&a_{12}&a_{13}\\a_{21}&a_{22}&a_{23}\end{bmatrix}\begin{bmatrix}b_{11}&b_{12}\\b_{21}&b_{22}\\b_{31}&b_{32}\end{bmatrix} = \begin{bmatrix}
+a_{11}b_{11}+a_{12}b_{21} + a_{13}b_{31}&
+a_{11}b_{12}+a_{12}b_{22} + a_{13}b_{32}\\
+a_{21}b_{11}+a_{22}b_{21} + a_{23}b_{31}&
+a_{21}b_{12}+a_{22}b_{22} + a_{23}b_{32}
+\end{bmatrix}</script><script type="math/tex; mode=display">
+例如： 
+\begin{bmatrix}
+1&3&5\\7&9&11
+\end{bmatrix}
+\begin{bmatrix}
+2&4\\6&8\\10&12
+\end{bmatrix} 
+= \begin{bmatrix}
+1*2+3 *6 + 5*10&
+1*4 + 3*8 + 5*12\\
+7*2 + 9* 6 + 11 * 10&
+7*4 + 9*8 + 11 * 12
+\end{bmatrix}
+= \begin{bmatrix}
+70 & 88\\
+178 & 316
+\end{bmatrix}</script></li>
+<li><p>任意矩阵 <code>M</code>乘以方阵 <code>S</code> 等于原矩阵，</p>
+<script type="math/tex; mode=display">
+MI = IM= M</script></li>
 </ul>
 <ul>
 <li><p>矩阵乘法<code>满足结合律（标量也适用）</code>， <code>不满足交换律</code>, 标量满足交换律，<code>矩阵相乘的转置 等于每个转置的乘法</code></p>
@@ -394,19 +430,31 @@ $$
 </li>
 <li><p>矩阵变换向量的过程：</p>
 <ul>
-<li><p>例如 [1, -3, -4] ,可理解为 [0,0,0] 先位移 [1,0,0], 再位移 [0,-3,0] ，再位移 [0,0,-4]<br>$$<br>\begin{bmatrix} 1 \-3\ -4 \end{bmatrix} = \begin{bmatrix} 1 \0 \0 \end{bmatrix} + \begin{bmatrix} 0 \-3 \0 \end{bmatrix} + \begin{bmatrix} 0 \0 \-4 \end{bmatrix}<br>$$</p>
-</li>
-<li><p>对于任意的向量 <code>v</code>都能协成 <code>&#39;拓展&#39;</code>形式<br>$$<br>v = \begin{bmatrix} x \y\ z \end{bmatrix} = x\begin{bmatrix} 1 \0 \0 \end{bmatrix} + y\begin{bmatrix} 0 \1 \0 \end{bmatrix} + z\begin{bmatrix} 0 \0 \1 \end{bmatrix}   【1】<br>$$</p>
-</li>
-<li><p>如果把公式 【1】的单位向量分别用 <strong>p,g,r（基向量需要线性无关）</strong> 代替，则可写成<br>$$<br>v = xp + yg+ zr 【2】<br>$$</p>
-</li>
-<li><p>将向量表示为基向量的线性组和<br>$$<br>M = \begin{bmatrix} p \g\ r \end{bmatrix} = \begin{bmatrix} p_x &amp; p_y &amp; p_z \g_x&amp;g_y&amp;g_z \r_x&amp;r_y&amp;r_z \end{bmatrix} 【3】<br>$$</p>
-</li>
-<li><p>使用公式【3】M展开公式【2】<br>$$<br>\begin{bmatrix} x &amp;y&amp;z \end{bmatrix}\ \begin{bmatrix} p_x &amp; p_y &amp; p_z \g_x&amp;g_y&amp;g_z \r_x&amp;r_y&amp;r_z \end{bmatrix}<br>= \begin{bmatrix}<br>xp_x + yg_x +zr_x &amp; xp_y + yg_y +zr_y &amp; xp_z + yg_z + zr_z<br>\end{bmatrix}<br>== xp + yg+ zr【4】<br>$$</p>
-</li>
-<li><p>证明【4】最后一步，又因为 <strong>M</strong>为基向量的展开式，所以<br>$$<br>\begin{bmatrix} x &amp;y&amp;z \end{bmatrix}\ \begin{bmatrix} p_x &amp; p_y &amp; p_z \g_x&amp;g_y&amp;g_z \r_x&amp;r_y&amp;r_z \end{bmatrix} = \begin{bmatrix} x &amp;y&amp;z \end{bmatrix}\ \begin{bmatrix} p \g \r \end{bmatrix}<br>$$</p>
-<p>$$<br>所以 \begin{bmatrix}<br>xp_x + yg_x +zr_x &amp; xp_y + yg_y +zr_y &amp; xp_z + yg_z + zr_z<br>\end{bmatrix} = xp + yg+ zr<br>$$</p>
-</li>
+<li><p>例如 [1, -3, -4] ,可理解为 [0,0,0] 先位移 [1,0,0], 再位移 [0,-3,0] ，再位移 [0,0,-4]</p>
+<script type="math/tex; mode=display">
+\begin{bmatrix} 1 \\-3\\ -4 \end{bmatrix} = \begin{bmatrix} 1 \\0 \\0 \end{bmatrix} + \begin{bmatrix} 0 \\-3 \\0 \end{bmatrix} + \begin{bmatrix} 0 \\0 \\-4 \end{bmatrix}</script></li>
+<li><p>对于任意的向量 <code>v</code>都能协成 <code>&#39;拓展&#39;</code>形式</p>
+<script type="math/tex; mode=display">
+v = \begin{bmatrix} x \\y\\ z \end{bmatrix} = x\begin{bmatrix} 1 \\0 \\0 \end{bmatrix} + y\begin{bmatrix} 0 \\1 \\0 \end{bmatrix} + z\begin{bmatrix} 0 \\0 \\1 \end{bmatrix}   【1】</script></li>
+<li><p>如果把公式 【1】的单位向量分别用 <strong>p,g,r（基向量需要线性无关）</strong> 代替，则可写成</p>
+<script type="math/tex; mode=display">
+v = xp + yg+ zr 【2】</script></li>
+<li><p>将向量表示为基向量的线性组和</p>
+<script type="math/tex; mode=display">
+M = \begin{bmatrix} p \\g\\ r \end{bmatrix} = \begin{bmatrix} p_x & p_y & p_z \\g_x&g_y&g_z \\r_x&r_y&r_z \end{bmatrix} 【3】</script></li>
+<li><p>使用公式【3】M展开公式【2】</p>
+<script type="math/tex; mode=display">
+\begin{bmatrix} x &y&z \end{bmatrix}\ \begin{bmatrix} p_x & p_y & p_z \\g_x&g_y&g_z \\r_x&r_y&r_z \end{bmatrix}
+= \begin{bmatrix} 
+xp_x + yg_x +zr_x & xp_y + yg_y +zr_y & xp_z + yg_z + zr_z
+\end{bmatrix}
+== xp + yg+ zr【4】</script></li>
+<li><p>证明【4】最后一步，又因为 <strong>M</strong>为基向量的展开式，所以</p>
+<script type="math/tex; mode=display">
+\begin{bmatrix} x &y&z \end{bmatrix}\ \begin{bmatrix} p_x & p_y & p_z \\g_x&g_y&g_z \\r_x&r_y&r_z \end{bmatrix} = \begin{bmatrix} x &y&z \end{bmatrix}\ \begin{bmatrix} p \\g \\r \end{bmatrix}</script><script type="math/tex; mode=display">
+所以 \begin{bmatrix} 
+xp_x + yg_x +zr_x & xp_y + yg_y +zr_y & xp_z + yg_z + zr_z
+\end{bmatrix} = xp + yg+ zr</script></li>
 </ul>
 </li>
 </ul>
@@ -425,15 +473,18 @@ $$
 <ul>
 <li><p>数学向量</p>
 <ul>
-<li>行向量<br>$$<br>\begin{bmatrix}1&amp;2&amp;3\end{bmatrix}<br>$$</li>
+<li>行向量<script type="math/tex; mode=display">
+\begin{bmatrix}1&2&3\end{bmatrix}</script></li>
 </ul>
 </li>
 </ul>
 <ul>
-<li><p>列向量<br>$$<br>\begin{bmatrix}1\2\3\end{bmatrix}<br>$$</p>
-</li>
-<li><p>0 向量，大小为0的向量。<br>$$<br>\begin{bmatrix}0&amp;0&amp;0\end{bmatrix} 或者 \begin{bmatrix}0\0\0\end{bmatrix}<br>$$</p>
-</li>
+<li><p>列向量</p>
+<script type="math/tex; mode=display">
+\begin{bmatrix}1\\2\\3\end{bmatrix}</script></li>
+<li><p>0 向量，大小为0的向量。</p>
+<script type="math/tex; mode=display">
+\begin{bmatrix}0&0&0\end{bmatrix} 或者 \begin{bmatrix}0\\0\\0\end{bmatrix}</script></li>
 </ul>
 <ul>
 <li><p>向量和点</p>
@@ -444,28 +495,35 @@ $$
 </li>
 <li><p>向量运算</p>
 <ul>
-<li><p>与标量的 <code>+</code>、<code>-</code>、<code>*</code>、<code>/</code> 运算，对每个分量单独运算. <code>/</code>运算需要 非0除数。<br>$$<br>k * \begin{bmatrix}1&amp;2&amp;3\end{bmatrix} =\begin{bmatrix}1&amp;2&amp;3\end{bmatrix} * k = \begin{bmatrix}1<em>k&amp;2</em>k&amp;3*k\end{bmatrix}<br>$$</p>
-</li>
-<li><p>长度/模，二维和三维的笛卡尔坐标系，分量方向分别垂直，所以符合<code>勾股定理</code>.<br>$$<br>\begin{Vmatrix}v\end{Vmatrix} = \sqrt{v_1^2 +v_2^2+ .. + v_n^2}, n代表v向量的维数。<br>$$</p>
-</li>
-<li><p>标准化向量<del>normalize</del>，<br>$$<br>v_{normal} = \frac{v}{\begin{Vmatrix}v\end{Vmatrix}}, v为非0向量。<br>$$</p>
-</li>
-<li><p>向量和向量<code>+</code>、<code>-</code>运算，**<code>需要同维度</code><strong>,对应维度向量相 <code>+</code>、<code>-</code>，</strong><code>a-b</code>相减几何意义，<code>b</code>的尾直接连接<code>a</code>的头形成的向量.**<br>$$<br>\begin{bmatrix}1&amp;2&amp;3\end{bmatrix} + \begin{bmatrix}4&amp;5&amp;6\end{bmatrix} =\begin{bmatrix}4&amp;5&amp;6\end{bmatrix} +\begin{bmatrix}1&amp;2&amp;3\end{bmatrix} = \begin{bmatrix}1+4&amp;2+5&amp;3+6\end{bmatrix}, 行向量相加<br>$$</p>
-<p>$$<br>\begin{bmatrix}1\2\3\end{bmatrix} + \begin{bmatrix}4\5\6\end{bmatrix} =\begin{bmatrix}4\5\6\end{bmatrix} +\begin{bmatrix}1\2\3\end{bmatrix} = \begin{bmatrix}1+4\2+5\3+6\end{bmatrix} , 列向量相加<br>$$</p>
-<p>$$<br>\begin{bmatrix}1&amp;2&amp;3\end{bmatrix} - \begin{bmatrix}4&amp;5&amp;6\end{bmatrix} = \begin{bmatrix}1-4&amp;2-5&amp;3-6\end{bmatrix}, 行向量相减<br>$$</p>
-<p>$$<br>\begin{bmatrix}1\2\3\end{bmatrix} - \begin{bmatrix}4\5\6\end{bmatrix} = \begin{bmatrix}1-4\2-5\3-6\end{bmatrix} , 列向量相减<br>$$</p>
-</li>
-<li><p>向量点乘 <code>*</code>（内积），对应分量相乘，结果相加，得到一个标量。<code>因此需要维数相同</code><br>$$<br>a_n * b_n \sum_{i=1}^{n}v_i*k_i, 对应项相乘，并累加。<br>$$</p>
-<p>$$<br>\begin{bmatrix}1\2\3\end{bmatrix} * \begin{bmatrix}4\5\6\end{bmatrix} =\begin{bmatrix}4\5\6\end{bmatrix} <em>\begin{bmatrix}1\2\3\end{bmatrix} = 1</em>4 + 2<em>5 + 3</em>6 = 32<br>$$</p>
-<ul>
-<li><p>几何解释<br>$$<br>a * b =\begin{Vmatrix}a\end{Vmatrix}*\begin{Vmatrix}b\end{Vmatrix}*\cos\theta_{a,b}<br>$$</p>
-</li>
+<li><p>与标量的 <code>+</code>、<code>-</code>、<code>*</code>、<code>/</code> 运算，对每个分量单独运算. <code>/</code>运算需要 非0除数。</p>
+<script type="math/tex; mode=display">
+k * \begin{bmatrix}1&2&3\end{bmatrix} =\begin{bmatrix}1&2&3\end{bmatrix} * k = \begin{bmatrix}1*k&2*k&3*k\end{bmatrix}</script></li>
+<li><p>长度/模，二维和三维的笛卡尔坐标系，分量方向分别垂直，所以符合<code>勾股定理</code>.</p>
+<script type="math/tex; mode=display">
+\begin{Vmatrix}v\end{Vmatrix} = \sqrt{v_1^2 +v_2^2+ .. + v_n^2}, n代表v向量的维数。</script></li>
+<li><p>标准化向量<del>normalize</del>，</p>
+<script type="math/tex; mode=display">
+v_{normal} = \frac{v}{\begin{Vmatrix}v\end{Vmatrix}}, v为非0向量。</script></li>
+<li><p>向量和向量<code>+</code>、<code>-</code>运算，<strong><code>需要同维度</code></strong>,对应维度向量相 <code>+</code>、<code>-</code>，<strong><code>a-b</code>相减几何意义，<code>b</code>的尾直接连接<code>a</code>的头形成的向量.</strong></p>
+<script type="math/tex; mode=display">
+\begin{bmatrix}1&2&3\end{bmatrix} + \begin{bmatrix}4&5&6\end{bmatrix} =\begin{bmatrix}4&5&6\end{bmatrix} +\begin{bmatrix}1&2&3\end{bmatrix} = \begin{bmatrix}1+4&2+5&3+6\end{bmatrix}, 行向量相加</script><script type="math/tex; mode=display">
+\begin{bmatrix}1\\2\\3\end{bmatrix} + \begin{bmatrix}4\\5\\6\end{bmatrix} =\begin{bmatrix}4\\5\\6\end{bmatrix} +\begin{bmatrix}1\\2\\3\end{bmatrix} = \begin{bmatrix}1+4\\2+5\\3+6\end{bmatrix} , 列向量相加</script><script type="math/tex; mode=display">
+\begin{bmatrix}1&2&3\end{bmatrix} - \begin{bmatrix}4&5&6\end{bmatrix} = \begin{bmatrix}1-4&2-5&3-6\end{bmatrix}, 行向量相减</script><script type="math/tex; mode=display">
+\begin{bmatrix}1\\2\\3\end{bmatrix} - \begin{bmatrix}4\\5\\6\end{bmatrix} = \begin{bmatrix}1-4\\2-5\\3-6\end{bmatrix} , 列向量相减</script></li>
+<li><p>向量点乘 <code>*</code>（内积），对应分量相乘，结果相加，得到一个标量。<code>因此需要维数相同</code></p>
+<script type="math/tex; mode=display">
+a_n * b_n \sum_{i=1}^{n}v_i*k_i, 对应项相乘，并累加。</script><script type="math/tex; mode=display">
+\begin{bmatrix}1\\2\\3\end{bmatrix} * \begin{bmatrix}4\\5\\6\end{bmatrix} =\begin{bmatrix}4\\5\\6\end{bmatrix} *\begin{bmatrix}1\\2\\3\end{bmatrix} = 1*4 + 2*5 + 3*6 = 32</script><ul>
+<li><p>几何解释</p>
+<script type="math/tex; mode=display">
+a * b =\begin{Vmatrix}a\end{Vmatrix}*\begin{Vmatrix}b\end{Vmatrix}*\cos\theta_{a,b}</script></li>
 <li><p>几何用途</p>
 <ul>
 <li><p>利用 <code>正</code>、<code>负</code>、<code>0</code>， 判断 锐角，直角和钝角。</p>
 </li>
-<li><p>$$<br>a * b_{normal} = a * \frac{b}{\begin{Vmatrix}b\end{Vmatrix}} = \frac{\begin{Vmatrix}a\end{Vmatrix}*\begin{Vmatrix}b\end{Vmatrix}*\cos\theta_{a,b}}{\begin{Vmatrix}b\end{Vmatrix}}<br>=\begin{Vmatrix}a\end{Vmatrix}*\cos\theta_{a,b}， 表示 a在b上的投影。<br>$$</p>
-</li>
+<li><script type="math/tex; mode=display">
+a * b_{normal} = a * \frac{b}{\begin{Vmatrix}b\end{Vmatrix}} = \frac{\begin{Vmatrix}a\end{Vmatrix}*\begin{Vmatrix}b\end{Vmatrix}*\cos\theta_{a,b}}{\begin{Vmatrix}b\end{Vmatrix}}
+=\begin{Vmatrix}a\end{Vmatrix}*\cos\theta_{a,b}， 表示 a在b上的投影。</script></li>
 </ul>
 </li>
 </ul>
@@ -474,11 +532,12 @@ $$
 </li>
 </ul>
 <ul>
-<li><p>向量叉乘 <code>x</code>, 第二位开始循环相乘 减去反对称相乘作为上一项元素。<br>$$<br>\begin{bmatrix}x_1\y_1\z_1\end{bmatrix} \times \begin{bmatrix}x_2\y_2\z_2\end{bmatrix} =\begin{bmatrix}y_1<em>z_2 - z_1</em>y_2\z_1<em>x_2 - x_1</em>z_2\x_1<em>y_2 - x_2</em>y_1\end{bmatrix}<br>$$</p>
-<p>$$<br>\begin{bmatrix}1\2\3\end{bmatrix} \times \begin{bmatrix}4\5\6\end{bmatrix} =\begin{bmatrix}2<em>6 - 3</em>5\3<em>4 - 1</em>6\1<em>5 - 2</em>4\end{bmatrix} = \begin{bmatrix}-3\6\-3\end{bmatrix}<br>$$</p>
-<ul>
-<li>几何解释, 叉乘的模等于’a’、<code>b</code>连接的平行四边形面积，方向满足左手法则，由 <code>a</code>的头指向，<code>b</code>的尾。axa = 0，ax(axb) = 0<br>$$<br>\begin{Vmatrix}a \times b\end{Vmatrix} =\begin{Vmatrix}a\end{Vmatrix}*\begin{Vmatrix}b\end{Vmatrix}*\sin\theta_{a,b}<br>$$<img src="D:\gitworkspace\WebSource\imgs\cross.png" style="zoom:80%;" />
-</li>
+<li><p>向量叉乘 <code>x</code>, 第二位开始循环相乘 减去反对称相乘作为上一项元素。</p>
+<script type="math/tex; mode=display">
+\begin{bmatrix}x_1\\y_1\\z_1\end{bmatrix} \times \begin{bmatrix}x_2\\y_2\\z_2\end{bmatrix} =\begin{bmatrix}y_1*z_2 - z_1*y_2\\z_1*x_2 - x_1*z_2\\x_1*y_2 - x_2*y_1\end{bmatrix}</script><script type="math/tex; mode=display">
+\begin{bmatrix}1\\2\\3\end{bmatrix} \times \begin{bmatrix}4\\5\\6\end{bmatrix} =\begin{bmatrix}2*6 - 3*5\\3*4 - 1*6\\1*5 - 2*4\end{bmatrix} = \begin{bmatrix}-3\\6\\-3\end{bmatrix}</script><ul>
+<li>几何解释, 叉乘的模等于’a’、<code>b</code>连接的平行四边形面积，方向满足左手法则，由 <code>a</code>的头指向，<code>b</code>的尾。axa = 0，ax(axb) = 0<script type="math/tex; mode=display">
+\begin{Vmatrix}a \times b\end{Vmatrix} =\begin{Vmatrix}a\end{Vmatrix}*\begin{Vmatrix}b\end{Vmatrix}*\sin\theta_{a,b}</script><img src="D:\gitworkspace\WebSource\imgs\cross.png" style="zoom:80%;" /></li>
 </ul>
 </li>
 <li><p>c++ vector 练习。</p>
@@ -522,7 +581,7 @@ $$
 <p><img src="/images\dikaer2d.png" style="zoom:80%;" /> <img src="/images\dikaer3d.png" style="zoom:120%;" /></p>
 <p>​            </p>
 <ul>
-<li>左手坐标系和右手坐标系， <code>不太明确的时候,使用 +x向东， +z向北来对应，比较有效。</code><br><img src="/images%5Chand.png"></li>
+<li>左手坐标系和右手坐标系， <code>不太明确的时候,使用 +x向东， +z向北来对应，比较有效。</code><br><img src="/images\hand.png" alt=""></li>
 </ul>
 </li>
 <li><p>游戏常用坐标系</p>
@@ -534,8 +593,7 @@ $$
 <li>嵌套式坐标系（父空间坐标系）</li>
 </ul>
 </li>
-<li><p>描述坐标系和坐标系转换</p>
-</li>
+<li>描述坐标系和坐标系转换</li>
 </ul>
 </div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2020/09/22/sources/README/">[ Untitled ]</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2020-09-22</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2020-09-22</span></span></div></header><div class="post-body"><div class="post-excerpt">
         <h1 id="WebSource"   >
