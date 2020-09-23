@@ -1,15 +1,15 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.1.1" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.1.1" type="image/png" sizes="32x32"><meta name="description" content="基础之坐标系        研究的都是离散数学， 非离散也是依赖精确度， 所以  计算机图形学第一准则：近似原则，如果看起来是对的，它就是对的。   笛卡尔坐标系  2d 坐标系 和 3d坐标系    ​              左手坐标系和右手坐标系， 不太明确的时候,使用 +x向东， +z向北来对应，比较有效。   游戏常用坐标系  世界坐标系 物体坐">
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.1.1" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.1.1" type="image/png" sizes="32x32"><meta name="description" content="基础之坐标系        categories:  3d数学mathjax: true    研究的都是离散数学， 非离散也是依赖精确度， 所以  计算机图形学第一准则：近似原则，如果看起来是对的，它就是对的。   笛卡尔坐标系  2d 坐标系 和 3d坐标系    ​              左手坐标系和右手坐标系， 不太明确的时候,使用 +x向东，">
 <meta property="og:type" content="article">
 <meta property="og:title" content="one2world">
 <meta property="og:url" content="https://one2world.github.io/2020/09/22/sources/3d%E6%95%B0%E5%AD%A6/1.%E5%9D%90%E6%A0%87%E7%B3%BB/index.html">
 <meta property="og:site_name" content="one2world">
-<meta property="og:description" content="基础之坐标系        研究的都是离散数学， 非离散也是依赖精确度， 所以  计算机图形学第一准则：近似原则，如果看起来是对的，它就是对的。   笛卡尔坐标系  2d 坐标系 和 3d坐标系    ​              左手坐标系和右手坐标系， 不太明确的时候,使用 +x向东， +z向北来对应，比较有效。   游戏常用坐标系  世界坐标系 物体坐">
+<meta property="og:description" content="基础之坐标系        categories:  3d数学mathjax: true    研究的都是离散数学， 非离散也是依赖精确度， 所以  计算机图形学第一准则：近似原则，如果看起来是对的，它就是对的。   笛卡尔坐标系  2d 坐标系 和 3d坐标系    ​              左手坐标系和右手坐标系， 不太明确的时候,使用 +x向东，">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://one2world.github.io/images/dikaer2d.png">
 <meta property="og:image" content="https://one2world.github.io/images/dikaer3d.png">
 <meta property="og:image" content="https://one2world.github.io/images%5Chand.png">
 <meta property="article:published_time" content="2020-09-22T03:14:32.222Z">
-<meta property="article:modified_time" content="2020-09-23T12:43:49.472Z">
+<meta property="article:modified_time" content="2020-09-23T12:58:44.248Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://one2world.github.io/images/dikaer2d.png"><title>[ Untitled ] | one2world</title><link ref="canonical" href="https://one2world.github.io/2020/09/22/sources/3d%E6%95%B0%E5%AD%A6/1.%E5%9D%90%E6%A0%87%E7%B3%BB/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.1.1"><script>var Stun = window.Stun || {};
@@ -36,11 +36,17 @@ var CONFIG = {
 };
 
 window.CONFIG = CONFIG;</script><!-- hexo injector head_end start -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
 <!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.2.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">Home</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">Archives</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">one2world</div><div class="header-banner-info__subtitle"></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">[ Untitled ]</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2020-09-22</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2020-09-23</span></span></div></header><div class="post-body">
         <h2 id="基础之坐标系"   >
           <a href="#基础之坐标系" class="heading-link"><i class="fas fa-link"></i></a>基础之坐标系</h2>
-      <blockquote>
+      <hr>
+<p>categories:</p>
+<ul>
+<li>3d数学<br>mathjax: true</li>
+</ul>
+<hr>
+<blockquote>
 <p>研究的都是离散数学， 非离散也是依赖精确度， 所以  <code>计算机图形学第一准则：近似原则，如果看起来是对的，它就是对的。</code></p>
 </blockquote>
 <ul>
