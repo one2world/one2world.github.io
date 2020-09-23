@@ -1,0 +1,159 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.1.1" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.1.1" type="image/png" sizes="32x32"><meta name="description" content="欧拉角和四元数          欧拉角  欧拉角 是将旋转分解成三个相互垂直的分量，分别操作。三个分量分别是 heading、pitch、bank(指的是惯性到物体坐标系）。还有一种常用的名字 roll、pitch、yaw，与heading、pitch、bank顺序相反（物体到惯性坐标系）， 先后次序不重要 欧拉角 优缺点 优点 使用容易 简洁的表达式 任">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2020/09/23/sources/3d%E6%95%B0%E5%AD%A6/5.%E6%AC%A7%E6%8B%89%E8%A7%92/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="欧拉角和四元数          欧拉角  欧拉角 是将旋转分解成三个相互垂直的分量，分别操作。三个分量分别是 heading、pitch、bank(指的是惯性到物体坐标系）。还有一种常用的名字 roll、pitch、yaw，与heading、pitch、bank顺序相反（物体到惯性坐标系）， 先后次序不重要 欧拉角 优缺点 优点 使用容易 简洁的表达式 任">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="d:/gitworkspace/WebSource/imgs/ola.png">
+<meta property="article:published_time" content="2020-09-23T08:37:05.210Z">
+<meta property="article:modified_time" content="2020-09-23T11:51:15.249Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="d:/gitworkspace/WebSource/imgs/ola.png"><title>[ Untitled ] | Hexo</title><link ref="canonical" href="http://example.com/2020/09/23/sources/3d%E6%95%B0%E5%AD%A6/5.%E6%AC%A7%E6%8B%89%E8%A7%92/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.1.1"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":false},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"Copy","copySuccess":"Copy Success","copyError":"Copy Error"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.2.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">Home</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">Archives</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">Hexo</div><div class="header-banner-info__subtitle"></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">[ Untitled ]</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2020-09-23</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2020-09-23</span></span></div></header><div class="post-body">
+        <h2 id="欧拉角和四元数"   >
+          <a href="#欧拉角和四元数" class="heading-link"><i class="fas fa-link"></i></a>欧拉角和四元数</h2>
+      <img src="D:\gitworkspace\WebSource\imgs\ola.png" style="zoom:80%;" />
+
+<ul>
+<li><p>欧拉角</p>
+<ul>
+<li>欧拉角 是将旋转分解成三个相互垂直的分量，分别操作。三个分量分别是 heading、pitch、bank(<strong>指的是惯性到物体坐标系</strong>）。还有一种常用的名字 roll、pitch、yaw，与heading、pitch、bank顺序相反（<strong>物体到惯性坐标系</strong>），</li>
+<li>先后次序不重要</li>
+<li>欧拉角 优缺点<ul>
+<li>优点<ul>
+<li>使用容易</li>
+<li>简洁的表达式</li>
+<li>任意三个数都合法</li>
+</ul>
+</li>
+<li>缺点<ul>
+<li>给定方位的表达式不唯一（360周期倍结果一致，数值不同。pitch135度 等价于heading 180，pitch45， 再bank 180），著名 <code>万向锁(至今没有简单的解决方案)</code></li>
+<li>两个角度间的插值困难（）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>限制 heading和bank在（-180， +180）之间， pitch 在(-90， 90)</li>
+</ul>
+</li>
+<li><p>四元数</p>
+</li>
+<li><p>各种方法比较</p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th>任务/性质</th>
+<th>矩阵</th>
+<th>欧拉角</th>
+<th>四元数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>在坐标系间旋转点</td>
+<td>能</td>
+<td>不能（需要转换到矩阵）</td>
+<td>不能（需要转换到矩阵）</td>
+</tr>
+<tr>
+<td>连接或增量旋转</td>
+<td>能，比四元数慢，还需要小心矩阵蠕变的情况</td>
+<td>不能</td>
+<td>能，比矩阵快</td>
+</tr>
+<tr>
+<td>插值</td>
+<td>不能</td>
+<td>能，遭遇万向锁和其他问题</td>
+<td>Slerp 提供平滑插值</td>
+</tr>
+<tr>
+<td>难易程度</td>
+<td>难</td>
+<td>易</td>
+<td>难</td>
+</tr>
+<tr>
+<td>储存</td>
+<td>9个数</td>
+<td>3个数</td>
+<td>4个数</td>
+</tr>
+<tr>
+<td>变换唯一性</td>
+<td>唯一</td>
+<td>不唯一，多种或者无数种</td>
+<td>不唯一，有两种，他们相互为负</td>
+</tr>
+<tr>
+<td>可能导致非法</td>
+<td>矩阵蠕变</td>
+<td>合法</td>
+<td>可能出现误差累计，从而产生非法四元数</td>
+</tr>
+</tbody></table></div>
+</li>
+<li><p>各种方法之间的转换</p>
+<ul>
+<li><p>欧拉角到矩阵</p>
+<blockquote>
+<pre><code>H、P、B分别为heading、pitch、bank的旋转矩阵，他们分别绕 y，x，z左手法则旋转。设 heading、pitch、bank 旋转角分量分别是 h、p、b则 旋转矩阵为 反向操作，</code></pre>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>欧拉角——&gt; 矩阵</p>
+<ul>
+<li><p>惯性——&gt;物体</p>
+<p>$$<br>H = R_y(-h)= \begin{bmatrix}<br>\cos(-h)&amp; 0&amp; -\sin(-h)\<br>0&amp; 1&amp; 0\<br>\sin(-h)&amp; 0&amp; \cos(-h)<br>\end{bmatrix}= \begin{bmatrix}<br>\cos(h)&amp; 0&amp; \sin(h)\<br>0&amp; 1&amp; 0\<br>-\sin(h)&amp; 0&amp; \cos(h)<br>\end{bmatrix}<br>$$</p>
+<p>$$<br>P = R_x(-p)= \begin{bmatrix}<br>1&amp; 0&amp; 0\<br>0&amp; \cos(-p)&amp; \sin(-p)\<br>0&amp;-\sin(-p)&amp; \cos(-p)<br>\end{bmatrix}= \begin{bmatrix}<br>0&amp; 1&amp; 0\<br>0&amp;\cos(p)&amp; -\sin(p)\<br>0&amp; \sin(p)&amp;  \cos(p)<br>\end{bmatrix}<br>$$</p>
+<p>$$<br>B = R_z(-b)= \begin{bmatrix}<br>\cos(-b)&amp; \sin(-b)&amp;0\<br>-\sin(-b)&amp; \cos(-b)&amp;0\<br>0&amp; 0&amp; 1<br>\end{bmatrix}= \begin{bmatrix}<br>\cos(b)&amp; -\sin(b)&amp;0\<br>\sin(b)&amp;  \cos(b)&amp;0\<br>0&amp; 0&amp; 1<br>\end{bmatrix}<br>$$</p>
+<p>$$<br>M_{惯性\rightarrow物体} = HPB =\begin{bmatrix}<br>\cos(h)&amp; 0&amp; \sin(h)\<br>0&amp; 1&amp; 0\<br>-\sin(h)&amp; 0&amp; \cos(h)<br>\end{bmatrix}\begin{bmatrix}<br>0&amp; 1&amp; 0\<br>0&amp;\cos(p)&amp; -\sin(p)\<br>0&amp; \sin(p)&amp;  \cos(p)<br>\end{bmatrix}\begin{bmatrix}<br>\cos(b)&amp; -\sin(b)&amp;0\<br>\sin(b)&amp;  \cos(b)&amp;0\<br>0&amp; 0&amp; 1<br>\end{bmatrix}<br>$$</p>
+<p>$$<br>=\begin{bmatrix}<br>\cos(h)\cos(b) + \sin(h)\sin(p)\sin(b)&amp; -\cos(h)\sin(b) + \sin(h)\sin(p)\sin(b)&amp; \sin(h)\cos(p)\<br>\sin(b)\cos(p)                        &amp; \cos(b)\sin(p)                         &amp; -\sin(p)\<br>\sin(h)\cos(b) + \cos(h)\sin(p)\sin(b)&amp; \sin(b)\sin(h) + \cos(h)\cos(p)\cos(b)&amp; \cos(h)\cos(p)\<br>\end{bmatrix}<br>$$</p>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code>- 物体——&gt;惯性</code></pre>
+<ul>
+<li><p>矩阵  ——&gt; 欧拉角</p>
+</li>
+<li><p>四元数 ——&gt; 矩阵</p>
+</li>
+<li><p>矩阵 ——&gt; 四元数</p>
+</li>
+<li><p>欧拉角 ——&gt; 四元数</p>
+</li>
+<li><p>四元数 ——&gt; 欧拉角</p>
+</li>
+<li><p>代码实现 EulerAngles、Quaternion、RotationMatrix、Matrix4x3 </p>
+<ul>
+<li>todo </li>
+</ul>
+</li>
+</ul>
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ END ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">Author: </span><span class="copyright-author__value"><a href="http://example.com">John Doe</a></span></div><div class="copyright-link"><span class="copyright-link__name">Link: </span><span class="copyright-link__value"><a href="http://example.com/2020/09/23/sources/3d%E6%95%B0%E5%AD%A6/5.%E6%AC%A7%E6%8B%89%E8%A7%92/">http://example.com/2020/09/23/sources/3d%E6%95%B0%E5%AD%A6/5.%E6%AC%A7%E6%8B%89%E8%A7%92/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">Copyright: </span><span class="copyright-notice__value">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> unless stating additionally</span></div></div><nav class="post-paginator paginator"><div class="paginator-next"><a class="paginator-next__link" href="/2020/09/22/sources/3d%E6%95%B0%E5%AD%A6/7.%E5%9B%BE%E5%BD%A2%E6%95%B0%E5%AD%A6/"><span class="paginator-prev__text">[ Untitled ]</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">Catalog</span><span class="sidebar-nav-ov">Overview</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AC%A7%E6%8B%89%E8%A7%92%E5%92%8C%E5%9B%9B%E5%85%83%E6%95%B0"><span class="toc-number">1.</span> <span class="toc-text">
+          欧拉角和四元数</span></a></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/stun-logo.svg" alt="avatar"></div><p class="sidebar-ov-author__text">hello world</p></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">8</div><div class="sidebar-ov-state-item__name">Archives</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="Creative Commons" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">You have read </span><span class="sidebar-reading-info__num">0</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2020</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>John Doe</span></div><div><span>Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a></span><span> v5.2.0</span><span class="footer__devider">|</span><span>Theme - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.1.1</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.1.1"></script><script src="/js/stun-boot.js?v=2.1.1"></script><script src="/js/scroll.js?v=2.1.1"></script><script src="/js/header.js?v=2.1.1"></script><script src="/js/sidebar.js?v=2.1.1"></script></body></html>

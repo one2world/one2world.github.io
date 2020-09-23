@@ -1,0 +1,199 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.1.1" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.1.1" type="image/png" sizes="32x32"><meta name="description" content="矩阵和线性变换        旋转  2D旋转  $$ 2d构造矩阵：  R(\theta) &#x3D; \begin{bmatrix} p^&#96; \\q^&#96; \end{bmatrix} &#x3D; \begin{bmatrix} \cos\theta &amp; \sin\theta\\-\sin\theta &amp;\cos\theta \end{bmatrix}, p 为x轴旋转，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2020/09/22/sources/3d%E6%95%B0%E5%AD%A6/4.%E5%8F%98%E6%8D%A2/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="矩阵和线性变换        旋转  2D旋转  $$ 2d构造矩阵：  R(\theta) &#x3D; \begin{bmatrix} p^&#96; \\q^&#96; \end{bmatrix} &#x3D; \begin{bmatrix} \cos\theta &amp; \sin\theta\\-\sin\theta &amp;\cos\theta \end{bmatrix}, p 为x轴旋转，">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="d:/gitworkspace/WebSource/imgs/rotate2d.png">
+<meta property="og:image" content="d:/gitworkspace/WebSource/imgs/rotate3d.png">
+<meta property="og:image" content="d:/gitworkspace/WebSource/imgs/tbian.png">
+<meta property="article:published_time" content="2020-09-22T03:15:50.813Z">
+<meta property="article:modified_time" content="2020-09-23T08:36:53.795Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="d:/gitworkspace/WebSource/imgs/rotate2d.png"><title>[ Untitled ] | Hexo</title><link ref="canonical" href="http://example.com/2020/09/22/sources/3d%E6%95%B0%E5%AD%A6/4.%E5%8F%98%E6%8D%A2/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.1.1"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":false},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"Copy","copySuccess":"Copy Success","copyError":"Copy Error"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.2.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">Home</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">Archives</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">Hexo</div><div class="header-banner-info__subtitle"></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">[ Untitled ]</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2020-09-22</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2020-09-23</span></span></div></header><div class="post-body">
+        <h2 id="矩阵和线性变换"   >
+          <a href="#矩阵和线性变换" class="heading-link"><i class="fas fa-link"></i></a>矩阵和线性变换</h2>
+      <ol>
+<li><p>旋转</p>
+<ol>
+<li><p>2D旋转</p>
+<img src="D:\gitworkspace\WebSource\imgs\rotate2d.png" style="zoom:80%;" />
+$$
+2d构造矩阵：  R(\theta) = \begin{bmatrix} p^` \\q^` \end{bmatrix} = \begin{bmatrix} \cos\theta & \sin\theta\\-\sin\theta &\cos\theta \end{bmatrix}, p 为x轴旋转， q为y轴旋转。
+$$
+</li>
+<li><p>3D旋转，<code>绕轴旋转</code></p>
+<ol>
+<li><p>区分旋转方向， <code>左手法则，手握旋转轴，拇指朝向正方向，四指绕向为正</code></p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th align="left"></th>
+<th align="center">左手坐标系</th>
+<th align="center">右手坐标系</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">从哪边看</td>
+<td align="center">正方向|负方向</td>
+<td align="center">正方向| 负方向</td>
+</tr>
+<tr>
+<td align="left">从负端向正端看</td>
+<td align="center">逆时针|顺时针</td>
+<td align="center">顺时针|逆时针</td>
+</tr>
+<tr>
+<td align="left">从正端向负端看</td>
+<td align="center">顺时针|逆时针</td>
+<td align="center">逆时针|顺时针</td>
+</tr>
+</tbody></table></div>
+</li>
+<li><p>绕着x轴旋转，(此时等于旋转 yz 组成的2d笛卡尔坐标系，而x轴不变，因此构造矩阵如下：）</p>
+<img src="D:\gitworkspace\WebSource\imgs\rotate3d.png" style="zoom:80%;" />
+$$
+绕x旋转的构造矩阵：  R(\theta) = \begin{bmatrix} p^`\\q^` \\r^` \end{bmatrix} = \begin{bmatrix} 1&0&0\\0&\cos\theta & \sin\theta\\0&-\sin\theta &\cos\theta \end{bmatrix}, p 为x轴旋转， q为y轴旋转,r为z轴旋转。
+$$
+</li>
+<li><p>绕y旋转类似，(此时等于旋转 xz 组成的2d笛卡尔坐标系，而y轴不变，因此构造矩阵如下：）<br>$$<br>绕y旋转的构造矩阵：  R(\theta) = \begin{bmatrix} p^<code>\\q^</code> \r^` \end{bmatrix} = \begin{bmatrix}<br>\cos\theta&amp;0&amp;-\sin\theta\<br>0&amp; 1&amp;0 \<br>\sin\theta &amp;0&amp;\cos\theta \end{bmatrix}, p 为x轴旋转， q为y轴旋转,r为z轴旋转。<br>$$</p>
+</li>
+<li><p>绕z旋转类似，(此时等于旋转 xy 组成的2d笛卡尔坐标系，而z轴不变，因此构造矩阵如下：）<br>$$<br>绕y旋转的构造矩阵：  R(\theta) = \begin{bmatrix} p^<code>\\q^</code> \r^` \end{bmatrix} = \begin{bmatrix}<br>\cos\theta&amp;\sin\theta&amp;0\<br>-\sin\theta &amp;\cos\theta &amp;0 \<br>0&amp; 0&amp; 1<br>\end{bmatrix}, p 为x轴旋转， q为y轴旋转,r为z轴旋转。<br>$$</p>
+</li>
+<li><p>绕<strong>任意方向，不依赖旋转轴</strong>旋转，原理类似，忽略推到，公式如下：<br>$$<br>R(n, \theta),代表 绕n方向旋转 \theta.<br>$$</p>
+<p>$$<br>R(n,\theta) = \begin{bmatrix} p^<code>\\q^</code> \r^` \end{bmatrix} = \begin{bmatrix}<br> n_x^2(1-\cos\theta)+   \cos\theta&amp; n_xn_y(1-\cos\theta)+n_z\sin\theta&amp;n_xn_z(1-\cos\theta)-n_y\sin\theta\<br>n_xn_y(1-\cos\theta)-n_x\sin\theta&amp; n_y^2 (1-\cos\theta)+   \cos\theta&amp;n_yn_z(1-\cos\theta)-n_x\sin\theta\<br>n_xn_z(1-\cos\theta)+n_y\sin\theta&amp; n_yn_z(1-\cos\theta)-n_x\sin\theta&amp;n_z^2 (1-\cos\theta)+    \cos\theta\<br>\end{bmatrix}<br>$$</p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>缩放</p>
+<ol>
+<li>沿坐标轴缩放<br>$$<br>S(k_x, k_y, k_z) = \begin{bmatrix}<br>k_x &amp; 0 &amp;0\<br>0&amp;k_y&amp;0\<br>0&amp;0&amp;k_z<br>\end{bmatrix}<br>$$</li>
+</ol>
+</li>
+</ol>
+<ol start="2">
+<li><p>沿<strong>任意方向，不依赖旋转轴</strong>缩放<br>$$<br>R(n, k),代表 绕n方向缩放 k.<br>$$</p>
+<p>$$<br>S(n,k) = \begin{bmatrix} p^<code>\\q^</code> \r^` \end{bmatrix} = \begin{bmatrix}<br> 1+(k-1)n_x^2&amp; (k-1)n_xn_y&amp; (k-1)n_xn_z\<br> (k-1)n_xn_y&amp; 1+(k-1)n_y^2&amp; (k-1)n_yn_z\<br> (k-1)n_xn_z&amp; (k-1)n_zn_y&amp; 1+(k-1)n_z^2<br>\end{bmatrix}<br>$$</p>
+</li>
+</ol>
+<ol start="3">
+<li><p>正交投影</p>
+<blockquote>
+<p>一般来说投影意味着降维操作，例如3d赋值给2d，抛弃z。（正交、平行、透视投影）</p>
+</blockquote>
+<ol>
+<li>向x轴投影，保留x为1， 舍弃部分置0<br>$$<br>P_x = S(\begin{bmatrix}0&amp;1\end{bmatrix} ,0) = \begin{bmatrix} 1&amp;0\0&amp;0 \end{bmatrix}<br>$$</li>
+</ol>
+</li>
+</ol>
+<ol start="2">
+<li><p>同理y轴投影<br>$$<br>P_y = S(\begin{bmatrix}1&amp;0\end{bmatrix} ,0) = \begin{bmatrix} 0&amp;0\0&amp;1 \end{bmatrix}<br>$$</p>
+</li>
+<li><p>向xy投影<br>$$<br>P_{xy} = S(\begin{bmatrix}0&amp;0&amp;1\end{bmatrix} ,0) = \begin{bmatrix} 1&amp;0&amp;0\0&amp;1&amp;0\0&amp;0&amp;0 \end{bmatrix}<br>$$</p>
+</li>
+<li><p>向xz投影<br>$$<br>P_{xz} = S(\begin{bmatrix}0&amp;1&amp;0\end{bmatrix} ,0) = \begin{bmatrix} 1&amp;0&amp;0\0&amp;0&amp;0\0&amp;0&amp;1\end{bmatrix}<br>$$</p>
+</li>
+</ol>
+<ol start="5">
+<li><p>向yz投影<br>$$<br>P_{yz} = S(\begin{bmatrix}1&amp;0&amp;0\end{bmatrix} ,0) = \begin{bmatrix} 0&amp;0&amp;0\0&amp;1&amp;0\0&amp;0&amp;1\end{bmatrix}<br>$$</p>
+</li>
+<li><p>向任意平面投影<br>$$<br>P(n) = S(n, 0), n代表任意直线/平面<br>$$</p>
+<p>$$<br>P(n) = S(n,0) = \begin{bmatrix}<br> 1+(0-1)n_x^2&amp; (0-1)n_xn_y&amp; (0-1)n_xn_z\<br> (0-1)n_xn_y&amp; 1+(0-1)n_y^2&amp; (0-1)n_yn_z\<br> (0-1)n_xn_z&amp; (0-1)n_zn_y&amp; 1+(0-1)n_z^2<br>\end{bmatrix}<br>$$</p>
+</li>
+</ol>
+<ol start="4">
+<li><p>镜像 <code>翻折</code></p>
+<ol>
+<li>2D<br>$$<br>P(n) = S(n,-1) = \begin{bmatrix}<br> 1+(-1-1)n_x^2&amp; (-1-1)n_xn_y\<br> (-1-1)n_xn_y&amp; 1+(-1-1)n_y^2\<br> (-1-1)n_xn_z&amp; (-1-1)n_zn_y<br>\end{bmatrix}<br>$$</li>
+</ol>
+</li>
+</ol>
+<ol start="2">
+<li>3D<br>$$<br>P(n) = S(n,-1) = \begin{bmatrix}<br> 1+(-1-1)n_x^2&amp; (-1-1)n_xn_y&amp; (-1-1)n_xn_z\<br> (-1-1)n_xn_y&amp; 1+(-1-1)n_y^2&amp; (-1-1)n_yn_z\<br> (-1-1)n_xn_z&amp; (-1-1)n_zn_y&amp; 1+(-1-1)n_z^2<br>\end{bmatrix}<br>= \begin{bmatrix}<br>1-2n_x^2&amp; -2n_xn_y&amp;-2n_xn_z\<br>-2n_xn_y&amp; -2n_y^2&amp;-2n_yn_z\<br>-2n_xn_z&amp; -2n_zn_y&amp;-2n_z^2\<br>\end{bmatrix}<br>$$</li>
+</ol>
+<ol start="5">
+<li><p>切变，<code>（非均匀地拉伸它，角度发生变化，面积和体积不变）</code></p>
+<img src="D:\gitworkspace\WebSource\imgs\tbian.png" style="zoom:80%;" />
+
+
+</li>
+</ol>
+<p>   $$<br>   x^` = x + sy,  s为变化因子。 H_x(s) =\begin{bmatrix}1&amp;0\s&amp;1\end{bmatrix}, x 随着y被切变，s控制方向和量<br>   $$</p>
+<p>   $$<br>   另一种变换 H_y。 H_y(s) =\begin{bmatrix}1&amp;s\0&amp;1\end{bmatrix}, x 随着y被切变，s控制方向和量<br>   $$</p>
+<ol start="6">
+<li><p>3D切变</p>
+<blockquote>
+<p>3d中的切变是取出一个坐标乘以不同的因子，再加到其他坐标上，H_{xy} 意义是 xy坐标被z改变，</p>
+</blockquote>
+<p>$$<br>H_{xy}(s) =\begin{bmatrix}1&amp;0&amp;0\0&amp;1&amp;0\s&amp;t&amp;1\end{bmatrix}<br>$$</p>
+<p>$$<br>H_{xz}(s) =\begin{bmatrix}1&amp;0&amp;0\s&amp;1&amp;t\0&amp;0&amp;1\end{bmatrix}<br>$$</p>
+<p>$$<br>H_{yz}(s) =\begin{bmatrix}1&amp;s&amp;t\0&amp;1&amp;0\0&amp;0&amp;1\end{bmatrix}<br>$$</p>
+</li>
+<li><p>组合变换</p>
+<ol>
+<li><p>坐标系组合变换<br>$$<br>P_{世界} = P_{物体}M_{物体\rightarrow世界}<br>$$</p>
+<p>$$<br>P_{相机} = P_{世界}M_{世界\rightarrow相机} = (P_{物体}M_{物体\rightarrow世界})M_{世界\rightarrow相机} = P_{物体}(M_{物体\rightarrow世界}M_{世界\rightarrow相机})<br>$$</p>
+<p>$$<br>M_{物体\rightarrow相机} = M_{物体\rightarrow世界}M_{世界\rightarrow相机}<br>$$</p>
+<p>$$<br>P_{相机} =P_{物体}M_{物体\rightarrow相机}<br>$$</p>
+</li>
+</ol>
+</li>
+<li><p>变换分类</p>
+<ol>
+<li>线性变换</li>
+<li>仿射变换（线性变换超集）</li>
+<li>可逆变换 （奇异矩阵不可逆，行列式不为0）</li>
+<li>等角变换   (夹角大小方向不变,所有等角变换都是可逆，仿射变换)</li>
+<li>正交变换   (垂直变换，切不缩放)</li>
+<li>刚体变换</li>
+</ol>
+</li>
+<li><p>4x4齐次矩阵</p>
+</li>
+<li><p>矩阵形式的优缺点</p>
+<ol>
+<li>优点<ol>
+<li>可立即变换</li>
+<li>被图形api使用</li>
+<li>多个角位移连接</li>
+<li>矩阵的逆</li>
+</ol>
+</li>
+<li>缺点<ol>
+<li>占用更多内存</li>
+<li>使用难度</li>
+<li>可能多余数据的累赘</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ END ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">Author: </span><span class="copyright-author__value"><a href="http://example.com">John Doe</a></span></div><div class="copyright-link"><span class="copyright-link__name">Link: </span><span class="copyright-link__value"><a href="http://example.com/2020/09/22/sources/3d%E6%95%B0%E5%AD%A6/4.%E5%8F%98%E6%8D%A2/">http://example.com/2020/09/22/sources/3d%E6%95%B0%E5%AD%A6/4.%E5%8F%98%E6%8D%A2/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">Copyright: </span><span class="copyright-notice__value">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> unless stating additionally</span></div></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2020/09/22/sources/3d%E6%95%B0%E5%AD%A6/6.%E5%87%A0%E4%BD%95%E5%9B%BE%E5%85%83/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">[ Untitled ]</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2020/09/22/sources/3d%E6%95%B0%E5%AD%A6/3.%E7%9F%A9%E9%98%B5/"><span class="paginator-prev__text">[ Untitled ]</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">Catalog</span><span class="sidebar-nav-ov">Overview</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E5%92%8C%E7%BA%BF%E6%80%A7%E5%8F%98%E6%8D%A2"><span class="toc-number">1.</span> <span class="toc-text">
+          矩阵和线性变换</span></a></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/stun-logo.svg" alt="avatar"></div><p class="sidebar-ov-author__text">hello world</p></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">8</div><div class="sidebar-ov-state-item__name">Archives</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="Creative Commons" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">You have read </span><span class="sidebar-reading-info__num">0</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2020</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>John Doe</span></div><div><span>Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a></span><span> v5.2.0</span><span class="footer__devider">|</span><span>Theme - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.1.1</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.1.1"></script><script src="/js/stun-boot.js?v=2.1.1"></script><script src="/js/scroll.js?v=2.1.1"></script><script src="/js/header.js?v=2.1.1"></script><script src="/js/sidebar.js?v=2.1.1"></script></body></html>
